@@ -1,10 +1,12 @@
 # Basic Web Development Code
 
-> Programa simples para cobrir conceitos básico de programação em JavaScript.
+> Programas simples para cobrir conceitos básico de programação em JavaScript.
 
 Primeiro Código: Um programa que armazena uma array com propriedades de usuários (objetos), cada usuário tem duas propriedades: um _nome_ e as _tecnologias_ que cada usuário trabalha. O programa também tem um método para buscar uma tecnologia específica em cada objeto do _array_. O output do programa é o nome dos usuários, suas tecnologias e uma tecnologia específica usada por um ou mais usuários.
 
 Segundo Código: Um programa que calcula a soma de receitas e despesas de usuários e no fim retorna o saldo (receitas - despesas).
+
+Terceiro Código:  Programa para realizar operações bancárias na conta de um usuário.
 
 ## Exemplo de uso do programa 1
 
@@ -37,7 +39,7 @@ _Para mais exemplos, consulte a [W3Schools][[w3schools]]._
 
 ## Exemplo de uso do programa 2
 
-Nesse programa exploramos a ideia de que uma função pode ser usada por outra função:
+Nesse código exploramos a ideia de que uma função pode ser usada por outra função:
 
 ```sh
 function calculateBalance (revenue, outgoing) {
@@ -50,7 +52,11 @@ function calculateBalance (revenue, outgoing) {
 
 É importante destacar que a ideia de _'escopo'_ também foi explorada aqui; a função `sumNumbers(numbers)` é utilizada detro da função `calculateBalance(revenue, outgoing)`, mas os valores atribuídos as variáveis dentro da função `sumNumbers(numbers)` estão contidos somente detro dessa função, por isso, e somente por isso (por causa da noção de _escopo_), podemos utilizar a função mais de uma vez dentro da função `calculateBalance(revenue, outgoing)`.
 
-## Meta
+## Exemplo de uso do programa 3
+
+Nesse código vamos explorar os conceitos de Booleanos; Organização; Padronização; Escrita.
+
+### Meta
 
 Made by Manfrinne Ferreira – [@Manfrinne_R00t](https://twitter.com/Manfrinne_r00t) – m4nfrinne@gmail.com
 
