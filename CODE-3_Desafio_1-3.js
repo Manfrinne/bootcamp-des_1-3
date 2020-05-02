@@ -1,10 +1,13 @@
 
+// Programa de transações bancárias
+
 const user = {
     name: 'Mariana',
     transactions: [],
     balance: 0
 };
 
+// Add Transactions
 function createTransaction(transaction) {
 
     user.transactions.push(transaction)
@@ -15,9 +18,10 @@ function createTransaction(transaction) {
         user.balance -= transaction.value
     }
 
-    return user.balance
-}
+    return (`transaction: ${transaction.type}, balance: ${user.balance}.`)
+};
 
+// Functions report
 function getHigherTransactionByType (type) {
     let higherValue = 0
 
@@ -27,16 +31,53 @@ function getHigherTransactionByType (type) {
         } 
     }
 
-    return (`highest ${type} transaction: ${higherValue}.`) 
+    return (`Highest ${type} transaction: ${higherValue}.`) 
+};
+
+function getAverageTransactionValue() {
+    let sum = 0
+
+    for (let transaction of user.transactions) {
+        sum += transaction.value
+    }
+
+    return (`Average Transactions: ${sum / user.transactions.length}.`)
+};
+
+function getTransactionsCount () {
+    let count = {
+        credit: 0,
+        debit: 0,
+    }
+
+    for (let transaction of user.transactions) {
+        if (transaction.type == 'credit') {
+            count.credit++
+        } else {
+            count.debit++
+        }
+    }
+
+    return count
 }
 
-console.log(createTransaction({type: 'credit', value: 105}))
-console.log(createTransaction({type: 'credit', value: 250}))
+// Call functions
+console.log("")
+console.log(createTransaction({type: 'credit', value: 50}));
+console.log(createTransaction({type: 'credit', value: 120}));
 
-console.log(createTransaction({type: 'debit', value: 100}))
-console.log(createTransaction({type: 'debit', value: 70}))
+console.log("")
+console.log(createTransaction({type: 'debit', value: 80}));
+console.log(createTransaction({type: 'debit', value: 30}));
 
-console.log(getHigherTransactionByType('debit'))
-console.log(getHigherTransactionByType('credit'))
+console.log("")
+console.log(getHigherTransactionByType('credit'));
+console.log(getHigherTransactionByType('debit'));
+
+console.log("")
+console.log(getAverageTransactionValue());
+
+console.log("")
+console.log(getTransactionsCount());
 
 
